@@ -17,7 +17,7 @@ char lower(char c) {
     return c;
 }
 
-string &str_max(string &a, string &b) {
+const string &str_max(const string &a, const string &b) {
     int len = min(a.size(), b.size());
     for (int i = 0; i < len; i++) {
         char ca = lower(a[i]), cb = lower(b[i]);
@@ -38,7 +38,7 @@ void init() {
     }
 }
 
-string &solve(int l, int r) {
+const string &solve(int l, int r) {
     int k = log2(r - l + 1);
     return str_max(dp[l][k], dp[r - (1 << k) + 1][k]);
 }
