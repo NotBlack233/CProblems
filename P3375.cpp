@@ -35,7 +35,7 @@ public:
             if (s[i] == this->p[j]) {
                 i++;
                 j++;
-                if (j == this->p.size()) {
+                if (j == (int)this->p.size()) {
                     res.push_back(i - j);
                     j = lps[this->p.size() - 1];
                 }
